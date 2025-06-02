@@ -1,0 +1,330 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7fafd;
+}
+.app {
+  display: flex;
+  height: 100vh;
+}
+.sidebar {
+  width: 70px;
+  background-color: #20343f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+.sidebar-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 20px;
+  color: white;
+}
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.top-bar {
+  background-color: #20343f;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 30px;
+}
+.idream {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1;
+}
+.top-bar-content {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+.search-box {
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.search-icon {
+  position: absolute;
+  left: 37%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ccc;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.search-input {
+  width: 250px;
+  height: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #354751;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
+.search-box:focus-within .search-icon {
+  opacity: 0;
+}
+.search-input::placeholder {
+  color: #ccc;
+  transition: opacity 0.3s;
+}
+.search-box:focus-within .search-input::placeholder {
+  opacity: 0;
+}
+.main-content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+.dashboard {
+  margin-top: 20px;
+}
+.dashboard h2,
+.call-analytics h2 {
+  color: #012a4a;
+}
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.date-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.date-filters button {
+  padding: 6px 12px;
+  background-color: #f9fafc;
+  color: #012a4a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.date-filters button.active {
+  background-color: #012a4a;
+  color: #f9fafc;
+}
+.date-filters input[type="date"] {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.calender {
+  border: 1px solid !important;
+  display: inline-flex;
+  gap: 30px;
+}
+.dashboard-content {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.stats {
+  flex: 0 0 40%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  min-width: 300px;
+}
+.card {
+  background: white;
+  padding: 20px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  color: #445d6e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70px;
+  gap: 6px;
+}
+.card span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a2e3a;
+}
+.charts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.chart-box1, .chart-box2 {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.chart-box1 {
+  flex: 0 0 16%;
+  min-width: 160px;
+  max-width: 180px;
+  padding: 12px;
+}
+.chart-box2 {
+  flex: 0 0 30%;
+  min-width: 280px;
+}
+.chart-box1 h3,
+.chart-box2 h3 {
+  font-size: 13px;
+  color: #445d6e;
+  font-weight: 500;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+.chart-box1 .pie {
+  width: 60px !important;
+  height: 60px !important;
+}
+.chart-box1 .chartjs-render-monitor + div {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #445d6e;
+}
+.chart-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #46a18b;
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+.chart-box1, .chart-box2 {
+  padding: 12px 16px;
+  height: auto; 
+  max-height: 220px; 
+}
+
+.chart-label {
+  font-size: 10px;
+  color: #445d6e;
+}
+.pie-labels {
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 8px;
+  color: #445d6e;
+}
+
+.pie-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pie-label .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.call-analytics {
+  margin-top: 30px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 5px #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+thead {
+  background-color: #fff;
+  color: #415967;
+}
+td,
+th {
+  padding: 8px 5px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+button {
+  background: #3a5869;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  margin: 0 2px;
+  color: white;
+  cursor: pointer;
+}
+.btn1 {
+  background: #828d93;
+}
+.btn2 {
+  background: #3a5869;
+}
+.btn3 {
+  background: #b5e9ff;
+}
+.btn4,
+.btn5 {
+  background: #f9fafc;
+}
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.analytics-tabs {
+  display: flex;
+  gap: 10px;
+}
+.analytics-tabs button {
+  background-color: #f9fafc;
+  color: #012a4a;
+}
+.analytics-tabs button.active {
+  background-color: #355469;
+  color: white;
+}
+.menu {
+  height: 35px;
+  width: 30px;
+  color: #255174;
+  padding-bottom: 15px;
+}
+.Dashboard {
+  color: #46a18b;
+}
+.Calls,
+.Analytics {
+  color: #fff;
+}
+.voice {
+  color: red;
+}
